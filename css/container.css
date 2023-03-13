@@ -464,8 +464,6 @@
   padding-left: 16px;
   border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 4px;
-
-  transition: outline-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .email-input:focus {

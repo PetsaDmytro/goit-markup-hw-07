@@ -34,7 +34,6 @@ html {
 body {
   color: var(--main-text-color);
   font-family: 'Roboto', sans-serif;
-  box-sizing: border-box;
 }
 
 .list {
@@ -100,6 +99,8 @@ ul {
 .header {
   border-bottom: 1px solid var(--secondary-text-color);
   padding: 12.5px 0;
+  box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08),
+    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
 }
 
 @media screen and (min-width: 768px) {
@@ -336,7 +337,6 @@ ul {
   transform: translateX(100%);
 
   width: 100%;
-  max-height: 796px;
   padding: 80px 40px 40px;
 
   display: flex;
@@ -420,6 +420,7 @@ ul {
   display: flex;
   flex-direction: column;
   gap: 40px;
+  max-width: 340px;
 }
 
 .contact-socials {
@@ -500,7 +501,7 @@ ul {
         rgba(46, 47, 66, 0.7)
       ),
       url('../images/people-office-laptop.jpg');
-    background-size: 1440px, contain;
+    background-size: 1440px, auto 100%;
     background-repeat: no-repeat;
     padding: 188px 0;
   }
@@ -547,6 +548,12 @@ ul {
 @media screen and (min-width: 1200px) {
   .hero-title {
     margin: 0 auto 48px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .low-case {
+    text-transform: lowercase;
   }
 }
 
@@ -1070,6 +1077,8 @@ ul {
   padding-left: 16px;
   border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 4px;
+
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 @media screen and (min-width: 768px) {
@@ -1082,10 +1091,11 @@ ul {
   .email-input {
     transition: outline-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   }
+}
 
-  .email-input:focus {
-    outline-color: #4d5ae5;
-  }
+.email-input:focus {
+  border-color: #4d5ae5;
+  outline: none;
 }
 
 .subscr-submit {
